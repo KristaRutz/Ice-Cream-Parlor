@@ -1,22 +1,23 @@
-# PIZZA PARLOR
-#### This web application, hosted on [GitHub Pages](https://kristarutz.github.io/Beep-Boop/), takes a number from a user and returns a range of numbers from 0 to the user inputted number, with some exciting exceptions.
-_Last updated: 01/24/2020_
+# ICE CREAM PARLOR
 
-### _By **Krista Rutz**_
+#### A website for an ice cream parlor, hosted on [GitHub Pages](https://kristarutz.github.io/Ice-Cream-Parlor/), where a user can choose one or more individual toppings (sprinkles, whipped cream, hot fudge, etc) and a size to order an ice cream and see the final cost.
+
+
+### _By **Krista Rutz** Last updated January 31 2020_
 
 ## Description
 
-This web application allows the user to enter a number from 0 to 1000. It then prints a list of the numbers from 0 to the user's chosen number, inclusive. However, certain rules replace numbers containing the digits 1, 2, or 3 with _"Beep!"_, _"Boop!"_, and _"I'm sorry, Dave. I'm afraid I can't do that."_, respectively.
+This web application allows the user to...
 
 ## Installation / Set-up
 
 This app is ready to run at this url:
-https://kristarutz.github.io/Beep-Boop/
+https://kristarutz.github.io/Ice-Cream-Parlor/
 
 You can also download the ZIP file to run this program without internet.
-* Select "Clone or Download" on the [GitHub Repository](https://github.com/KristaRutz/Beep-Boop.git) site > Download ZIP
+* Select "Clone or Download" on the [GitHub Repository](https://github.com/KristaRutz/Ice-Cream-Parlor.git) site > Download ZIP
 * Open the ZIP download and extract files.
-* The new folder will be created as "Beep-Boop" unless you change this setting. In this folder, select the index.html document.
+* The new folder will be created as "ice-cream-parlor" unless you change this setting. In this folder, select the index.html document.
 * Choose "Open With" > Google Chrome or another browser of your choice.
 * The website is now ready to use!
 
