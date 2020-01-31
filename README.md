@@ -37,15 +37,15 @@ You can also download the ZIP file to run this program without internet.
 | When user clicks on cart, the contents of the cart are displayed | click <kbd>View cart</kbd>| "nothing in the cart" message, <kbd>new</kbd> button |
 | Create input form for a new ice cream creation
 | User selects "new" ice cream creation | click <kbd>new</kbd> | new creation form appears |
-| User selects "Kid's Scoop" option | Size: <kbd>Kid's</kbd> | Price updates to $2.25 but user cannot add to cart |
-| User selects chocolate flavor | Flavor: <kbd>Chocolate</kbd> | Price remains $2.25 and user can add to cart |
-| User does not select any toppings | Toppings: <kbd>None</kbd> | Price remains $2.25 and user can add to cart |
-| User selects 1 topping | Toppings: <kbd>Sprinkles</kbd> | Price updates to $2.55 and user can add to cart |
+| User selects "Kid's Scoop" option | Size: <kbd>Kid's</kbd> | Price updates to $2.50 but user cannot add to cart |
+| User selects chocolate flavor | Flavor: <kbd>Chocolate</kbd> | Price remains $2.50 and user can add to cart |
+| User does not select any toppings | Toppings: <kbd>None</kbd> | Price remains $2.50 and user can add to cart |
+| User selects 1 topping | Toppings: <kbd>Sprinkles</kbd> | Price updates to $2.80 and user can add to cart |
 | User adds to cart | click <kbd>Add to cart</kbd> | Cart size increases to 1, form is reset, and <kbd>Add another creation</kbd> button appears |
 | When user clicks on cart, the contents of the cart are displayed | click <kbd>View cart</kbd>| "1 kid's scoop" message, price, total price, <kbd>checkout</kbd> button, <kbd>new</kbd> button |
 ||||
 | User selects "Triple Scoop" option | Size: <kbd>Triple</kbd> | Price updates to $5 but user cannot add to cart |
-| User selects chocolate flavor | Flavor: <kbd>Chocolate</kbd> | Price remains $3 and user cannot add to cart - must select three flavors |
+| User selects chocolate flavor | Flavor: <kbd>Chocolate</kbd> | Price remains $5 and user cannot add to cart - must select three flavors |
 | User selects chocolate, strawberry, vanilla flavor | Flavor: <kbd>Chocolate</kbd> <kbd>Strawberry</kbd> <kbd>Vanilla</kbd> | Price remains $5 and user can add to cart |
 | User does not select any toppings | Toppings: <kbd>None</kbd> | Price remains $5 and user can add to cart |
 | User selects 1 topping | Toppings: <kbd>Sprinkles</kbd> | Price updates to $5.30 and user can add to cart |

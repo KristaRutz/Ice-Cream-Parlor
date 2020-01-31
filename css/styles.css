@@ -5,3 +5,21 @@
 .jumbotron {
   font-family: cursive;
 } */
+
+#page-heading, #order-form, #subtotal-sidebar {
+  background-color: cornsilk;
+  border-radius: 14px;
+  padding: 14px;
+}
+
+/* #order-form {
+  margin-left: 15px;
+}
+
+#subtotal-sidebar {
+  margin-right: 15px;
+} */
+.col {
+  border: solid;
+  margin: 15px;
+}

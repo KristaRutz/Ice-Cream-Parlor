@@ -9,15 +9,41 @@
   </head>
   <body>
     <div class="container">
-      <div id="homePageScreen">
-        <h1 class="jumbotron">The Ice Cream Parlor</h1>
-        <img src="img/outdoor-waffle-cones.jpg" alt="ice cream cones with sky in background
+      <!-- <div id="homepage-screen">
+        <h1 class="jumbotron">Anissa's Splendid Ice Cream</h1>
+        <img src="img/outdoor-waffle-cones.jpg" alt="ice cream cones with sky in background">
+      </div> -->
+      <div id="page-heading">
+        <h1>Anissa's Splendid Ice Cream</h1>
+        <p>In celebration of a friendship based on ice cream, help us to craft you the perfect frozen ice cream.</p>
       </div>
-      <div id="pageHeadings">
-        <h1>The Ice Cream Parlor</h1>
+      <div id="cart-screen"></div>
+
+      <div id="update-order-screen">
+        <h3>design your dessert</h3>
+        <div class="row">
+          <div class="col col-sm-8" id="order-form">
+            <form id="new-dessert-form">
+              <p>this is my form</p>
+            </form>
+          </div>
+          <div class="col col-sm-3" id="subtotal-sidebar">
+            <p>Your Creation:</p>
+            <p id="item-type-display">Ice Cream Choice: <span id="currently-selected-item">[e.g. "Kid's", " ", or "Banana Split"</span><span id="currently-selected-number-of-scoops">[e.g. "Single", "Double"...]</span> - $<span id="currently-selected-item-cost">5.00</span></p>
+            <ul id="scoop-description-display-list">
+              <li id="scoop-1">[Vanilla, e.g.]</li>
+            </ul>
+            <p id="number-of-toppings-display">Toppings: <span id="currently-selected-number-of-toppings"></span></p>
+            <ul id="toppings-display-list">
+              <li id="toppings-0"><span id="toppings-0-qty">0</span> None - $<span id="toppings-0-cost">0</span></li>
+              <li id="toppings-1"><span id="toppings-1-qty">2</span> Banana - $<span id="toppings-0-cost">1.60</span></li>
+            </ul>
+            <p id="cone-choice-display">Cone selection: <span id="currently-selected-cone-choice">cup</span></p>
+            <p id="subtotal-display">Subtotal: $<span id="currently-selected-subtotal">10.00</span></p>
+          </div>
+        </div>
       </div>
-      <div id="cartScreen"></div>
-      <form id="newDessertForm"></form>
+
     </div>
   </body>
 </html>
