@@ -31,59 +31,27 @@ You can also download the ZIP file to run this program without internet.
 <details>
   <summary>Expand specs for this project</summary>
 
-* **Spec**: The program returns an error message when the inputted number is out of range.
-  * **Input**: "-4"
-  * **Output**: "Value must be greater than or equal to 0."  
-  
-* **Spec**: The program returns a range of numbers from 0 to the users inputted number
-  * **Input**: "4"
-  * **Output**: "0, 1, 2, 3, 4"
-* **Spec**: The program can be re-used to show new results
-  * **Input**: "4" => GO , "2" => GO
-  * **Output**: "0, 1, 2, 3, 4" => "0, 1, 2"
-* **Spec**: The program returns "I'm sorry Dave, I'm afraid I can't do that" in place of numbers that contain the digit "3"
-  * **Input**: "4"
-  * **Output**: "0, 1, 2, "I'm sorry Dave, I'm afraid I can't do that", 4"
-* **Spec**: The program returns "Boop!" in place of numbers that contain the digit "2"
-  * **Input**: "4"
-  * **Output**: "0, 1, "Boop!", "I'm sorry Dave, I'm afraid I can't do that", 4"
-* **Spec**: The program returns "Beep!" in place of numbers that contain the digit "1"
-  * **Input**: "4"
-  * **Output**: "0, "Beep!", "Boop!", "I'm sorry Dave, I'm afraid I can't do that", 4"
-* **Spec**: The program allows the user to reset the form
-  * **Input**: Clicks reset
-  * **Output**: Form is reset and the output display is empty
-#### Further Exploration
-* **Spec**: The program will allow the user to enter "game mode"
-  * **Input**: Click Game mode
-  * **Output**: Game mode is toggled.
-* **Spec**: "Game mode" brings up buttons for the user to choose from
-  * **Input**: "Toggle Game mode"
-  * **Output**: Button selection is displayed: #, beep, boop, "sorry"
-* **Spec**: The program displays "0" and outputs true when user selects 0.
-  * **Input**: "0"
-  * **Output**: "correct"
-* **Spec**: The program displays "0" and outputs false when user selects !0.
-  * **Input**: "Beep!"
-  * **Output**: "Beep!"
-* **Spec**: The program displays "1" when user clicks next.
-  * **Input**: Clicks next
-  * **Output**: Game display reset & next "number" appears
-* **Spec**: The program displays "1" and outputs true when user selects "beep".
-  * **Input**: "beep"
-  * **Output**: "correct"
-* **Spec**: The program displays "1" and outputs false when user selects "1".
-  * **Input**: "1"
-  * **Output**: "wrong"
-* **Spec**: The program displays "2" and outputs true when user selects "boop".
-  * **Input**: "boop"
-  * **Output**: "correct"
-* **Spec**: The program displays "2" and outputs false when user selects "2" or "beep".
-  * **Input**: "2"
-  * **Output**: "wrong"
-* **Spec**: The program displays lives and levels. False levels cause loss of life
-  * **Input**: Incorrect answer
-  * **Output**: Lives--
+| Spec | Example Input | Expected Output |
+| :-------------     | :------------- | :------------- |
+| User begins with an empty cart | "Example" | "Example" |
+| When user clicks on cart, the contents of the cart are displayed | click <kbd>View cart</kbd>| "nothing in the cart" message, <kbd>new</kbd> button |
+| Create input form for a new ice cream creation
+| User selects "new" ice cream creation | click <kbd>new</kbd> | new creation form appears |
+| User selects "Kid's Scoop" option | Size: <kbd>Kid's</kbd> | Price updates to $2.25 but user cannot add to cart |
+| User selects chocolate flavor | Flavor: <kbd>Chocolate</kbd> | Price remains $2.25 and user can add to cart |
+| User does not select any toppings | Toppings: <kbd>None</kbd> | Price remains $2.25 and user can add to cart |
+| User selects 1 topping | Toppings: <kbd>Sprinkles</kbd> | Price updates to $2.55 and user can add to cart |
+| User adds to cart | click <kbd>Add to cart</kbd> | Cart size increases to 1, form is reset, and <kbd>Add another creation</kbd> button appears |
+| When user clicks on cart, the contents of the cart are displayed | click <kbd>View cart</kbd>| "1 kid's scoop" message, price, total price, <kbd>checkout</kbd> button, <kbd>new</kbd> button |
+||||
+| User selects "Triple Scoop" option | Size: <kbd>Triple</kbd> | Price updates to $5 but user cannot add to cart |
+| User selects chocolate flavor | Flavor: <kbd>Chocolate</kbd> | Price remains $3 and user cannot add to cart - must select three flavors |
+| User selects chocolate, strawberry, vanilla flavor | Flavor: <kbd>Chocolate</kbd> <kbd>Strawberry</kbd> <kbd>Vanilla</kbd> | Price remains $5 and user can add to cart |
+| User does not select any toppings | Toppings: <kbd>None</kbd> | Price remains $5 and user can add to cart |
+| User selects 1 topping | Toppings: <kbd>Sprinkles</kbd> | Price updates to $5.30 and user can add to cart |
+| User adds a second item to cart | click <kbd>Add to cart</kbd> | Cart size increases to 2, form is reset, and <kbd>Add another creation</kbd> button appears |
+| When user clicks on cart, the contents of the cart are displayed | click <kbd>View cart</kbd>| "1 kid's scoop" message, price, "1 triple scoop" message, price, total price, <kbd>checkout</kbd> button, <kbd>new</kbd> button |
+
 </details>
 
 ## Known Bugs
