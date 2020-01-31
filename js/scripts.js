@@ -2,11 +2,16 @@ function IceCream(isKid, cone){
   this.isKid = isKid;
   this.cone = cone;
   this.scoops = [];
-  this.toppings = [Topping("sprinkles", 0.3), Topping("hot fudge", 1), Topping("whipped cream", 0.5), Topping("berry compote", 1), Topping("cherry", 0.3), Topping("peanuts", 0.5), Topping("banana", 0.8), Topping("waffle cone", 0.8)];
-  this.basePrice = 2;
+  this.toppings = [new Topping("sprinkles", 30), new Topping("hot fudge", 100), new Topping("whipped cream", 50), new Topping("strawberry sauce", 100), new Topping("cherry", 30), new Topping("peanuts", 50), new Topping("banana", 80), new Topping("waffle cone", 80)];
+  this.basePrice = 200;
   this.toppingsPrice = 0;
-  this.scoopCost = 0;
-  this.totalPrice = basePrice + toppingsPrice + scoopPrice;
+  this.scoopPrice = 0;
+
+}
+
+IceCream.prototype.getTotalPrice = function(){
+  var totalPrice = (this.basePrice + this.toppingsPrice + this.scoopPrice);
+  return totalPrice;
 }
 
 IceCream.prototype.addTopping = function(topping){
@@ -28,22 +33,18 @@ IceCream.prototype.removeTopping = function(topping){
   }
 }
 
-IceCream.prototype.updatePrice = function() {
-
-  var scoopCost = 1;
-  var howManyScoops = this.scoops.length;
-  if (howManyScoops === 1) {
-    if (this.isKid){
-      var scoopCost = 0.5;
-    } 
+IceCream.prototype.updateScoopPrice = function() {
+  var scoopCost = 100;
+  if (this.isKid){
+    scoopCost = 50;
   }
-  this.price += (scoopCost * howManyScoops);
-  return this.price;
+  var howManyScoops = this.scoops.length;
+  this.scoopPrice = (scoopCost * howManyScoops);
 }
 
-IceCream.prototype.addScoop = function(scoop){
-  if 
-  this.scoops.push(scoop);
+IceCream.prototype.addScoop = function(flavor){
+  this.scoops.push(flavor);
+  this.updateScoopPrice();
 }
 
 function Topping(name, cost){
@@ -53,14 +54,42 @@ function Topping(name, cost){
 }
 
 function newKidsCone(flavor, cone){
-  var iceCream = new IceCream(isKid, cone);
-  var scoop = flavor;
-  iceCream.scoops.push(scoop);
+  var iceCream = new IceCream(true, cone);
+  iceCream.addScoop(flavor);
   return iceCream;
 }
 
 function newSingleCone(flavor, cone){
-  var scoop = new Scoop(false, flavor, cone);
-  var iceCream = new IceCream();
+  var iceCream = new IceCream(false, cone);
+  iceCream.addScoop(flavor);
+  return iceCream;
+}
+
+function newDoubleCone(flavor1, flavor2, cone){
+  var iceCream = new IceCream(false, cone);
+  iceCream.addScoop(flavor1);
+  iceCream.addScoop(flavor2);
+  return iceCream;
+}
+
+function newTripleCone(flavor1, flavor2, flavor3, cone){
+  var iceCream = new IceCream(false, cone);
+  iceCream.addScoop(flavor1);
+  iceCream.addScoop(flavor2);
+  iceCream.addScoop(flavor3);
+  return iceCream;
+}
+
+function newClassicBananaSplit(){
+  var iceCream = new IceCream(false, cone);
+  iceCream.addScoop("vanilla");
+  iceCream.addScoop("chocolate");
+  iceCream.addScoop("strawberry");
+  iceCream.addTopping("banana");
+  iceCream.addTopping("strawberry sauce");
+  iceCream.addTopping("hot fudge");  
+  iceCream.addTopping("whipped cream");
+  iceCream.addTopping("peanuts");
+  iceCream.addTopping("cherry");
   return iceCream;
 }
