@@ -1,28 +1,29 @@
-/* body {
-  text-align: center;
+body {
+  background-color: rgba(255, 228, 121, 0.253);
 }
 
-.jumbotron {
-  font-family: cursive;
-} */
-
 #page-heading, #order-form, #subtotal-sidebar {
-  background-color: cornsilk;
+  background-color: white;
   border-radius: 14px;
   padding: 14px;
 }
 
-/* #order-form {
-  margin-left: 15px;
+#page-heading {
+  margin-top: 15px;
+  text-align: center;
+  color: rgb(255, 221, 109);
 }
 
-#subtotal-sidebar {
-  margin-right: 15px;
-} */
 .col {
   margin: 15px;
 }
 
 #subtotal-sidebar, #flavorSelect1Div, #toppingsSelect, #flavorSelect2Div, #flavorSelect3Div {
   display: none;
+}
+
+#subtotal-header {
+  font-weight: 600;
+  font-size: 18pt;
+  color: black;
 }
