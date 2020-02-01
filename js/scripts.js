@@ -138,6 +138,9 @@ function displayForm(dessertType){
     $("#flavorSelect2Div").show();
   } else if (dessertType === "Milkshake") {
     $("#toppingsSelectDiv").hide();
+  } else if (dessertType === "reset") {
+    $("#flavorSelect1Div").hide();
+    $("#toppingsSelect").hide();
   }
 }
 
@@ -146,10 +149,18 @@ $(document).ready(function() {
   var typeChosen = false;
 
   $("#makeTypeChoice").click(function() {
-    var scoopSelection = $("#dessertTypeSelect").val()
-    document.getElementById('new-dessert-form').reset();
-    typeChosen = true;
-    displayForm(scoopSelection);
+    if (typeChosen === false) {
+      var scoopSelection = $("#dessertTypeSelect").val()
+      $("#dessertTypeSelect").hide();
+      $("#makeTypeChoice").text("Change your treat!")
+      typeChosen = true;
+      displayForm(scoopSelection);
+    } else {
+      $("#dessertTypeSelect").show();
+      $("#makeTypeChoice").text("Choose!")
+      typeChosen = false;
+      displayForm("reset");
+    }
   })
 
   $("#new-dessert-form").submit(function(event) {
@@ -157,7 +168,6 @@ $(document).ready(function() {
 
     if (typeChosen) {
       var dessertType = $("#dessertTypeSelect").val();
-
       var flavor1 = $("#flavorSelect1").val();
       var flavor2 = $("#flavorSelect2").val();
       var flavor3 = $("#flavorSelect3").val();
@@ -187,7 +197,16 @@ $(document).ready(function() {
 
       updateCartTotal(currentDessert);
       console.log(currentDessert);
-      console.log($("#flavorSelect1").val());
+
+      typeChosen = false;
+      $("#new-dessert-form").trigger("reset"); 
+
+      $("#dessertTypeSelect").show();
+      $("#makeTypeChoice").text("Choose!")
+      $("#flavorSelect1Div").hide();
+      $("#toppingsSelect").hide();   
+      $("#flavorSelect2Div").hide();
+      $("#flavorSelect3Div").hide();
     }
   })
 })
