@@ -20,6 +20,9 @@
   margin-right: 15px;
 } */
 .col {
-  border: solid;
   margin: 15px;
+}
+
+#subtotal-sidebar, #flavorSelect1Div, #toppingsSelect, #flavorSelect2Div, #flavorSelect3Div {
+  display: none;
 }

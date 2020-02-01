@@ -4,6 +4,9 @@
     <link href="css/bootstrap.css" rel="stylesheet" type="text/css">
     <link href="css/styles.css" rel="stylesheet" type="text/css">
     <script src="js/jquery-3.4.1.js"></script>
+    <script src="js/popper.min.js"></script>
+    <script src="js/bootstrap.js"></script>
+    <script src="js/bootstrap.bundle.js"></script>
     <script src="js/scripts.js"></script>
     <title>Ice Cream Parlor</title>
   </head>
@@ -16,74 +19,149 @@
       <div id="page-heading">
         <h1>Anissa's Splendid Ice Cream</h1>
         <p>In celebration of a friendship based on ice cream, help us craft you the perfect frozen ice cream</p>
+        <p>Your total is $<span id="cartTotalPrice">0.00</span>.</p>
+        <button class="btn btn-secondary" id="viewCart">View Cart</button>
       </div>
-      <div id="cart-screen"></div>
+      <div id="cart-screen">
+      </div>
 
       <div id="update-order-screen">
         <h3>design your dessert</h3>
         <div class="row">
           <div class="col col-sm-8" id="order-form">
             <form id="new-dessert-form">
-              <p>this is my form</p>
-
+              <!-- <div class="dropdown mb-3">
+                <button class="btn btn-secondary dropdown-toggle" type="button" id="dessertTypeDropDown" data-toggle="dropdown">
+                  Select your sweet treat
+                </button>
+                <div class="dropdown-menu">
+                  <h6 class="dropdown-header">Scoops</h6>
+                  <div class="dropdown-divider"></div>
+                  <button class="dropdown-item" type="button" id="kids">Kid's scoop</button>
+                  <button class="dropdown-item" type="button" id="1">Single scoop</button>
+                  <button class="dropdown-item" type="button" id="2">Double scoop</button>
+                  <button class="dropdown-item" type="button" id="3">Triple scoop</button>
+                  <div class="dropdown-divider"></div>
+                  <h6 class="dropdown-header">Specialties</h6>
+                  <div class="dropdown-divider"></div>
+                  <button class="dropdown-item" type="button" id="bananaSplit">Classic banana split</button>
+                  <button class="dropdown-item" type="button" id="sundae">Sundae</button>
+                  <button class="dropdown-item" type="button" id="milkshake">Milkshake</button>
+                </div>
+              </div> -->
               <div class="input-group mb-3">
+                <label>Choices are difficult, but you can't go wrong with any of these!</label>
                 <div class="input-group-prepend">
-                  <label class="input-group-text" for="dessertTypeSelect">Ice Cream Creation</label>
+                  <label class="input-group-text" for="dessertTypeSelect">Create a new...</label>
                 </div>
                 <select class="custom-select" id="dessertTypeSelect">
-                  <option selected>Select your ice cream...</option>
                   <optgroup label="Scoops">
                     <option value="Kids">Kid's Scoop</option>
-                    <option value="1">Single Scoop</option>
+                    <option selected value="1">Single Scoop</option>
                     <option value="2">Double Scoop</option>
                     <option value="3">Triple Scoop</option>
                   </optgroup>
                   <optgroup label="Specialties">
-                    <option value="Banana Split">Classic Banana Split</option>
+                    <option value="Split">Classic Banana Split</option>
                     <option value="Sundae">Sundae</option>
                     <option value="Milkshake">Milkshake</option>
                   </optgroup>
                 </select>
                 <div class="input-group-append">
-                  <button class="btn btn-outline-secondary" type="button">Continue</button>
+                  <button id="makeTypeChoice" class="btn btn-outline-secondary" type="button">Choose!</button>
                 </div>
               </div>
 
-              <div class="input-group mb-3">
+              <div id="flavorSelect1Div" class="input-group mb-3">
                 <div class="input-group-prepend">
-                  <label class="input-group-text" for="flavorSelect1">Flavor</label>
+                  <label class="input-group-text" for="flavorSelect1">Choose your flavor</label>
                 </div>
                 <select class="custom-select" id="flavorSelect1">
-                  <option selected>Choose your flavor...</option>
-                  <option value="Vanilla">Vanilla Bean</option>
+                  <option value="Vanilla" selected>Vanilla Bean</option>
                   <option value="Chocolate">Theo's Chocolate</option>
                   <option value="Strawberry">California Strawberry</option>
                   <option value="Mint Chip">Mint Chocolate Chip</option>
-                  <option value="Espresso">Espresso Macchiato</option>
-                  <option value="Cookie Dough">Cookie Dough</option>
+                  <option value="Coffee">Trader Joe's Coffee Bean Blast</option>
+                  <option value="Cookie Dough">Snickerdoodle Cookie Dough</option>
                   <option value="Peanut Butter">Peanut Butter and Chocolate Swirl</option>
-                  <option value="Honey Lavender">PNW Honey Lavender</option>
+                  <option value="Lavender">Snoqualmie Lavender</option>
+                  <option value="Mango">Florida Eis Vegan Mango Sorbet</option>
+                  <option value="Earl Grey">Molly Moon's Earl Grey</option>
                 </select>
               </div>
 
-              <div class="form-group mb-3">
-                <label for="toppingsSelect">Toppings</label>
-                <div class="custom-control custom-checkbox">
-                  <input type="checkbox" class="custom-control-input" id="topping-select-hot-fudge">
-                  <label class="custom-control-label" for="topping-select-hot-fudge">Hot fudge</label>
+              <div id="flavorSelect2Div" class="input-group mb-3">
+                <div class="input-group-prepend">
+                  <label class="input-group-text" for="flavorSelect2">Choose another flavor</label>
                 </div>
-
-                <div class="form-check">
-                  <input class="form-check-input" type="checkbox" value="" id="defaultCheck1">
-                  <label class="form-check-label" for="defaultCheck1">
-                    Default checkbox
-                  </label>
-                </div>
+                <select class="custom-select" id="flavorSelect2">
+                  <option value="Vanilla" selected>Vanilla Bean</option>
+                  <option value="Chocolate">Theo's Chocolate</option>
+                  <option value="Strawberry">California Strawberry</option>
+                  <option value="Mint Chip">Mint Chocolate Chip</option>
+                  <option value="Coffee">Trader Joe's Coffee Bean Blast</option>
+                  <option value="Cookie Dough">Snickerdoodle Cookie Dough</option>
+                  <option value="Peanut Butter">Peanut Butter and Chocolate Swirl</option>
+                  <option value="Lavender">Snoqualmie Lavender</option>
+                  <option value="Mango">Florida Eis Vegan Mango Sorbet</option>
+                  <option value="Earl Grey">Molly Moon's Earl Grey</option>
+                </select>
               </div>
 
-              
+              <div id="flavorSelect3Div" class="input-group mb-3">
+                <div class="input-group-prepend">
+                  <label class="input-group-text" for="flavorSelect3">Choose another flavor</label>
+                </div>
+                <select class="custom-select" id="flavorSelect3">
+                  <option value="Vanilla" selected>Vanilla Bean</option>
+                  <option value="Chocolate">Theo's Chocolate</option>
+                  <option value="Strawberry">California Strawberry</option>
+                  <option value="Mint Chip">Mint Chocolate Chip</option>
+                  <option value="Coffee">Trader Joe's Coffee Bean Blast</option>
+                  <option value="Cookie Dough">Snickerdoodle Cookie Dough</option>
+                  <option value="Peanut Butter">Peanut Butter and Chocolate Swirl</option>
+                  <option value="Lavender">Snoqualmie Lavender</option>
+                  <option value="Mango">Florida Eis Vegan Mango Sorbet</option>
+                  <option value="Earl Grey">Molly Moon's Earl Grey</option>
+                </select>
+              </div>
+
+              <div id="toppingsSelect" class="form-group mb-3">
+                <label for="toppingsSelect">Toppings</label>
+                <div class="custom-control custom-checkbox">
+                  <input type="checkbox" class="custom-control-input" id="topping-select-hot-fudge" value="hot fudge" name="toppings">
+                  <label class="custom-control-label" for="topping-select-hot-fudge">Hot fudge sauce</label>
+                </div>
+                <div class="custom-control custom-checkbox">
+                  <input type="checkbox" class="custom-control-input" id="topping-select-strawberry-sauce" value="strawberry sauce" name="toppings">
+                  <label class="custom-control-label" for="topping-select-strawberry-sauce">Strawberry sauce</label>
+                </div>
+                <div class="custom-control custom-checkbox">
+                  <input type="checkbox" class="custom-control-input" id="topping-select-banana" value="banana" name="toppings">
+                  <label class="custom-control-label" for="topping-select-banana">Sliced banana</label>
+                </div>
+                <div class="custom-control custom-checkbox">
+                  <input type="checkbox" class="custom-control-input" id="topping-select-whipped-cream" value="whipped cream" name="toppings">
+                  <label class="custom-control-label" for="topping-select-whipped-cream">Whipped cream</label>
+                </div>
+                <div class="custom-control custom-checkbox">
+                  <input type="checkbox" class="custom-control-input" id="topping-select-peanuts" value="peanuts" name="toppings">
+                  <label class="custom-control-label" for="topping-select-peanuts">Chopped nuts</label>
+                </div>
+                <div class="custom-control custom-checkbox">
+                  <input type="checkbox" class="custom-control-input" id="topping-select-sprinkles" value="sprinkles" name="toppings">
+                  <label class="custom-control-label" for="topping-select-sprinkles">Sprinkles</label>
+                </div>
+                <div class="custom-control custom-checkbox">
+                  <input type="checkbox" class="custom-control-input" id="topping-select-cherry" value="cherry" name="toppings">
+                  <label class="custom-control-label" for="topping-select-cherry">and a cherry on top!</label>
+                </div>
+              </div>
+              <button id="addItemButton" type="submit" class="btn btn-dark">Add to Cart</button>
+              <button id="addItemButton" type="reset" class="btn btn-secondary">Clear form</button>
             </form>
           </div>
+
           <div class="col col-sm-3" id="subtotal-sidebar">
             <p>Your Creation:</p>
             <p id="item-type-display">Ice Cream Choice: <span id="currently-selected-item">[e.g. "Kid's", " ", or "Banana Split"</span><span id="currently-selected-number-of-scoops">[e.g. "Single", "Double"...]</span> - $<span id="currently-selected-item-cost">5.00</span></p>
