@@ -93,8 +93,24 @@ function newClassicBananaSplit(){
   return iceCream;
 }
 
-function getCartTotal(){
-  // sidebar should be updated
+function newMilkshake(flavor){
+  var iceCream = new IceCream(false);
+  iceCream.addScoop(flavor); 
+  iceCream.addTopping("whipped cream");
+  iceCream.addTopping("sprinkles");
+  iceCream.addTopping("cherry");
+  return iceCream;
+}
+
+function newSundae(flavor1, flavor2, flavor3){
+  var iceCream = new IceCream(false);
+  iceCream.addScoop(flavor1);
+  iceCream.addScoop(flavor2);
+  iceCream.addScoop(flavor3);
+  iceCream.addTopping("whipped cream");
+  iceCream.addTopping("hot fudge");
+  iceCream.addTopping("cherry");
+  return iceCream;
 }
 
 // User Interface --------------------------------------------------
@@ -107,21 +123,21 @@ function updateCartTotal(currentDessert){
 }
 
 function displayForm(dessertType){
-  $("#flavorSelect1").show();
-  $("#flavorSelect2").hide();
-  $("#flavorSelect3").hide();
+  $("#flavorSelect1Div").show();
+  $("#flavorSelect2Div").hide();
+  $("#flavorSelect3Div").hide();
   $("#toppingsSelect").show();
 
   if (dessertType === "Split"){
-    $("#flavorSelect1").hide();
+    $("#flavorSelect1Div").hide();
     $("#toppingsSelect").hide();
   } else if (dessertType === "3" || dessertType === "Sundae") {
-    $("#flavorSelect2").show();
-    $("#flavorSelect3").show();
+    $("#flavorSelect2Div").show();
+    $("#flavorSelect3Div").show();
   } else if (dessertType === "2") {
-    $("#flavorSelect2").show();
+    $("#flavorSelect2Div").show();
   } else if (dessertType === "Milkshake") {
-    $("#toppingsSelect").hide();
+    $("#toppingsSelectDiv").hide();
   }
 }
 
@@ -131,6 +147,7 @@ $(document).ready(function() {
 
   $("#makeTypeChoice").click(function() {
     var scoopSelection = $("#dessertTypeSelect").val()
+    document.getElementById('new-dessert-form').reset();
     typeChosen = true;
     displayForm(scoopSelection);
   })
@@ -142,11 +159,23 @@ $(document).ready(function() {
       var dessertType = $("#dessertTypeSelect").val();
 
       var flavor1 = $("#flavorSelect1").val();
-      var flavor1 = $("#flavorSelect1").val();
-      var flavor1 = $("#flavorSelect1").val();
+      var flavor2 = $("#flavorSelect2").val();
+      var flavor3 = $("#flavorSelect3").val();
 
       if (dessertType === "1"){
         currentDessert = newSingleCone(flavor1);
+      } else if (dessertType === "2"){
+        currentDessert = newDoubleCone(flavor1, flavor2);
+      } else if (dessertType === "3"){
+        currentDessert = newTripleCone(flavor1, flavor2, flavor3);
+      } else if (dessertType === "Kids"){
+        currentDessert = newKidsCone(flavor1);
+      } else if (dessertType === "Milkshake"){
+        currentDessert = newMilkshake(flavor1);
+      } else if (dessertType === "Split"){
+        currentDessert = newClassicBananaSplit();
+      } else if (dessertType === "Sundae"){
+        currentDessert = newSundae(flavor1, flavor2, flavor3);
       }
 
       var listOfToppings = [];
@@ -157,26 +186,8 @@ $(document).ready(function() {
       });
 
       updateCartTotal(currentDessert);
-      console.log(listOfToppings);
+      console.log(currentDessert);
       console.log($("#flavorSelect1").val());
     }
   })
-
-  // $("#kids").click(function(){
-  //   console.log("Kid scoop was selected");
-  //   $("#dessertTypeDropDown").hide();
-  //   var currentDessert = newKidsCone();
-  // })
-
-  // $("#1").click(function(){
-  //   console.log("Single scoop was selected");
-  // })
-
-  // $("#2").click(function(){
-  //   console.log("Double scoop was selected");
-  // })
-
-  // $("#bananaSplit").click(function(){
-  //   currentDessert = newClassicBananaSplit();
-  // })
 })
