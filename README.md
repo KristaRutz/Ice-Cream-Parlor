@@ -7,7 +7,7 @@
 
 ## Description
 
-This web application allows the user to...
+This web application allows the user to choose between 7 types of ice cream treats, select from a menu of ten flavors, and add up to 7 toppings. It then calculates the cost of the order.
 
 ## Installation / Set-up
 
@@ -56,7 +56,7 @@ You can also download the ZIP file to run this program without internet.
 
 ## Known Bugs
 
-No known bugs.
+If treat type is changed while toppings are selected, the order may contain double toppings or toppings associated with the previous treat type.
 
 ## Support and contact details
 
